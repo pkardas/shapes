@@ -1,0 +1,2 @@
+class ShapeNotFoundError(Exception):
+    pass
