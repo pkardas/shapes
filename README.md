@@ -106,30 +106,69 @@ Test your solution using following JSON:
 
 ```json
 "polygons": [
-    {
-      "name": "roof",
-      "points": [
-        {
-          "x": 100,
-          "y": 110
-        },
-        {
-          "x": 150,
-          "y": 140
-        },
-        {
-          "x": 200,
-          "y": 110
-        }
-      ],
-      "color": "red"
-    }
+  {
+    "name": "roof",
+    "points": [
+      {
+        "x": 100,
+        "y": 110
+      },
+      {
+        "x": 150,
+        "y": 140
+      },
+      {
+        "x": 200,
+        "y": 110
+      }
+    ],
+    "color": "red"
+  }
 ]
 ```
 
 
 
-#### TASK 3 - XXX
+#### TASK 3 - Get rid of explicit order
+
+Right now user have to explicitly define order or shapes:
+
+```json
+"order": [
+  "sun",
+  "building",
+  "window_0",
+  "window_1",
+  "door",
+  "grass",
+  "roof"
+]
+```
+
+which is slightly annoying, because you have to remember about various objects and edit JSON in two places when adding a new element.
+
+Purpose of this task is to get rid of explicit order and allow user to define shapes as follows:
+
+```json
+...
+"shapes": [
+  {
+    "name": "sun",
+    ...
+  },
+  {
+    "name": "grass",
+    ...
+  },
+  ...
+]
+```
+
+So `shapes` should be just list of objects, order in the list will define drawing order.
+
+Start by updating `Drawing` in `models.py`. Get rid of `circles`, `rectangles`, `squares`, `polygons` `order`, and replace them with single attribute - `shapes: List[Union[Circle, Rectangle, Square, Polygon]]`.
+
+Remove `get_shape` method from `Shape`. Update `draw` function in `drawing.py`.
 
 #### TASK 4 - XXX
 

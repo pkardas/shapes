@@ -2,7 +2,7 @@
   "width": 700,
   "height": 500,
   "background_color": "ivory",
-  "circles": [
+  "shapes": [
     {
       "name": "sun",
       "point": {
@@ -11,9 +11,16 @@
       },
       "radius": 50,
       "color": "gold"
-    }
-  ],
-  "rectangles": [
+    },
+    {
+      "name": "building",
+      "point": {
+        "x": 100,
+        "y": 10
+      },
+      "length": 100,
+      "color": "silver"
+    },
     {
       "name": "grass",
       "point": {
@@ -53,20 +60,7 @@
       "width": 20,
       "height": 60,
       "color": "sienna"
-    }
-  ],
-  "squares": [
-    {
-      "name": "building",
-      "point": {
-        "x": 100,
-        "y": 10
-      },
-      "length": 100,
-      "color": "silver"
-    }
-  ],
-  "polygons": [
+    },
     {
       "name": "roof",
       "points": [
@@ -85,14 +79,5 @@
       ],
       "color": "red"
     }
-  ],
-  "order": [
-    "sun",
-    "building",
-    "window_0",
-    "window_1",
-    "door",
-    "grass",
-    "roof"
   ]
 }

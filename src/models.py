@@ -60,21 +60,4 @@ class Drawing(BaseModel):
     width: int
     height: int
     background_color: Color
-    circles: List[Circle]
-    rectangles: List[Rectangle]
-    squares: List[Square]
-    polygons: List[Polygon]
-    order: List[str]
-
-    def get_shape(self, name: str) -> Union[Circle, Rectangle, Square, Polygon]:
-        shape = next((
-            shape
-            for shape in [*self.circles, *self.rectangles, *self.squares, *self.polygons]
-            if shape.name == name),
-            None
-        )
-
-        if not shape:
-            raise ShapeNotFoundError(f"'{name}' was not found")
-
-        return shape
+    shapes: List[Union[Circle, Rectangle, Square, Polygon]]

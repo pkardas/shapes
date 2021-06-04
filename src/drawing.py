@@ -13,9 +13,7 @@ DPI = 100
 def draw(drawing: Drawing) -> Figure:
     fig, ax = _setup_plt(drawing)
 
-    for shape_name in drawing.order:
-        shape = drawing.get_shape(shape_name)
-
+    for shape in drawing.shapes:
         drawers[shape.class_name](ax, shape)
 
     return fig
