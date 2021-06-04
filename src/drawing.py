@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from matplotlib.axes import Axes
 from matplotlib.figure import Figure
 
-from src.models import Drawing, Circle, Rectangle, Polygon
+from src.models import Drawing, Circle, Rectangle
 
 # 'matplotlib' does not work with pixels directly, but uses physical sizes and DPI:
 DPI = 100
@@ -27,14 +27,6 @@ def draw_circle(ax: Axes, circle: Circle) -> None:
     )
 
 
-def draw_polygon(ax: Axes, polygon: Polygon) -> None:
-    ax.add_patch(
-        plt.Polygon([
-            (point.x, point.y) for point in polygon.points
-        ], closed=True, color=polygon.color.as_hex(), clip_on=True)
-    )
-
-
 def draw_rectangle(ax: Axes, rectangle: Rectangle) -> None:
     ax.add_patch(
         plt.Rectangle(
@@ -47,7 +39,6 @@ def draw_rectangle(ax: Axes, rectangle: Rectangle) -> None:
 
 drawers = {
     "circle": draw_circle,
-    "polygon": draw_polygon,
     "rectangle": draw_rectangle,
 }
 
