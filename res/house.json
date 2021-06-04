@@ -66,12 +66,33 @@
       "color": "silver"
     }
   ],
+  "polygons": [
+    {
+      "name": "roof",
+      "points": [
+        {
+          "x": 100,
+          "y": 110
+        },
+        {
+          "x": 150,
+          "y": 140
+        },
+        {
+          "x": 200,
+          "y": 110
+        }
+      ],
+      "color": "red"
+    }
+  ],
   "order": [
     "sun",
     "building",
     "window_0",
     "window_1",
     "door",
-    "grass"
+    "grass",
+    "roof"
   ]
 }

@@ -96,7 +96,38 @@ It is possible to draw squares as rectangles, but it would be nice to support sh
 3. Add `draw_square` function in `drawing.py`
 4. Check if your solution works, add some square to `house.json` (you can define `building` as a square)
 
-#### TASK 2 - XXX
+#### TASK 2 - Add Polygon
+
+Right now it is not possible to draw more advanced shapes, for example triangles. Similarly to TASK 1 add `Polygon` shape.
+
+`matplotlib` supports drawing polygons - `plt.Polygon`, this object expects lists of nodes defined as (X, Y) pairs.
+
+Test your solution using following JSON:
+
+```json
+"polygons": [
+    {
+      "name": "roof",
+      "points": [
+        {
+          "x": 100,
+          "y": 110
+        },
+        {
+          "x": 150,
+          "y": 140
+        },
+        {
+          "x": 200,
+          "y": 110
+        }
+      ],
+      "color": "red"
+    }
+]
+```
+
+
 
 #### TASK 3 - XXX
 
