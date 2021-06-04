@@ -127,8 +127,6 @@ Test your solution using following JSON:
 ]
 ```
 
-
-
 #### TASK 3 - Get rid of explicit order
 
 Right now user have to explicitly define order or shapes:
@@ -193,8 +191,6 @@ Then open terminal and run:
 $ pip install -r requirements-all.txt
 ```
 
-
-
 In order to check if code is formatted correctly run:
 
 ```bash
@@ -228,7 +224,71 @@ If you find any of the errors not useful / not worth typing you can exclude it f
 
 Look around the code and identify elements that are no longer used. For example `errors.py`. Get rid of unused elements.
 
-Run `flake8`, `mypy` and check if your application still works.
+Run `flake8`, `mypy` and check if our application still works.
+
+#### TASK 7 - Software (Shapes) as a Service
+
+Change in software is inevitable. Our management decided we are not going to ship the application to the customers and force them to use the command line script. Instead we are going to put the application on the server and for example charge users for every request to our server.
+
+We have to prepare `shapes` application to serve requests via HTTP. We are going to use FastAPI to serve requests: https://fastapi.tiangolo.com/tutorial/first-steps/
+
+Add following dependencies to the `requirements.txt`:
+
+```
+fastapi==0.65.1
+aiofiles==0.7.0
+uvicorn==0.14.0
+```
+
+Then open terminal and run:
+
+```bash
+$ pip install -r requirements-all.txt
+```
+
+As a starter create `src/endpoints.py` with following content:
+
+```python
+from fastapi import APIRouter
+
+router = APIRouter()
+
+
+@router.get("/")
+def root():
+    return {"message": "Hello World"}
+```
+
+And replace content of `shapes.py` with:
+
+```python
+from fastapi import FastAPI
+
+from src import endpoints
+
+app = FastAPI()
+app.include_router(endpoints.router)
+```
+
+Run server with following command:
+
+```bash
+$ uvicorn shapes:app --reload
+```
+
+Open: http://127.0.0.1:8000/docs
+
+Then rework starter to accept drawing requets through POST using following example: https://fastapi.tiangolo.com/tutorial/body/
+
+In order to complete this task you will need also add following line in `drawing.py`:
+
+```
+matplotlib.use("Agg")
+```
+
+and get familiar with `NamedTemporaryFile` and `FileResponse`.
+
+Test you solution by entering content of `house.json` in the browser (http://127.0.0.1:8000/docs). Your endpoint should return an image.
 
 ### Example solution
 

@@ -1,11 +1,13 @@
 from typing import Tuple
 
 import matplotlib.pyplot as plt
-from matplotlib.axes import Axes
+from matplotlib.axes import Axes, matplotlib
 from matplotlib.figure import Figure
 
 from src.models import Drawing, Circle, Rectangle, Square, Polygon
 
+# Prevent - "Starting a Matplotlib GUI outside of the main thread will likely fail":
+matplotlib.use("Agg")
 # 'matplotlib' does not work with pixels directly, but uses physical sizes and DPI:
 DPI = 100
 
