@@ -224,6 +224,12 @@ $ mypy .
 
 If you find any of the errors not useful / not worth typing you can exclude it from mypy check via ` # type: ignore`.
 
+#### TASK 6 - Keep the code clean
+
+Look around the code and identify elements that are no longer used. For example `errors.py`. Get rid of unused elements.
+
+Run `flake8`, `mypy` and check if your application still works.
+
 ### Example solution
 
 I highly encourage you to solve the tasks on your own and then check the example solution.

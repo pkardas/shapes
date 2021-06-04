@@ -1,4 +1,4 @@
-from typing import Tuple, Union, Callable, Dict
+from typing import Tuple
 
 import matplotlib.pyplot as plt
 from matplotlib.axes import Axes
