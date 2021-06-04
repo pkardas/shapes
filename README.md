@@ -62,12 +62,11 @@ Let's focus on the code organisation for a while.
 ```
 shapes/                - root directory
   res/                 - folder with resources (JSON files), that can be used as input for the program
-  src/                 - folder with Python code
-    __init__.py        
-    data.py        - everything related to data manipulation (saving, loading)
-    drawing.py     - everything related to drawing
-    errors.py      - custom errors
-    models.py      - shapes definition
+  src/                 - folder with Python code       
+    data.py            - everything related to data manipulation (saving, loading)
+    drawing.py         - everything related to drawing
+    errors.py          - custom errors
+    models.py          - shapes definition
   .gitignore           - paths that are excluded from version control system
   README.md            - file you are currently reading
   requirements.txt     - dependencies that are used by the program during runtime
