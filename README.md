@@ -176,7 +176,53 @@ Copy example input: https://github.com/pkardas/shapes/blob/80da8a6faddfb5a80125c
 
 Sometimes user might not want to provide shape name, make this parameter optional. Update `Shape` in `models.py`. Check your solution, remove `name` from couple of shapes in `house.json`.
 
-#### TASK 5 - XXX
+#### TASK 5 - Use external tool to check code styling and typing
+
+Our code should meet highest coding standards, for this reason we should use external tool to check if your code is formatted according to PEP8 and if we are passing correct types to functions.
+
+Add following libraries to the  `requirements-dev.txt`:
+
+```
+flake8==3.9.2
+mypy==0.812
+```
+
+Then open terminal and run:
+
+```bash
+$ pip install -r requirements-all.txt
+```
+
+
+
+In order to check if code is formatted correctly run:
+
+```bash
+$ flake8 .
+```
+
+Flake8 will most probably complain about line length (eg. `E501 line too long (83 > 79 characters)`), 79 is too little for modern screens. We need to adjust libraries configuration. Create `setup.cfg` file with following content:
+
+```
+[flake8]
+max-line-length = 120
+max-complexity = 10
+show-source = True
+
+[mypy]
+python_version = 3.8
+ignore_missing_imports = True
+```
+
+Run the command again, fix all the issues indicated by flake8 and rerun the command.
+
+In order to check if we are passing correct types around, run:
+
+```bash
+$ mypy .
+```
+
+If you find any of the errors not useful / not worth typing you can exclude it from mypy check via ` # type: ignore`.
 
 ### Example solution
 

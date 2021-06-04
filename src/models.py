@@ -3,8 +3,6 @@ from typing import List, Union, Optional
 from pydantic import BaseModel
 from pydantic.color import Color
 
-from src.errors import ShapeNotFoundError
-
 
 class Shape(BaseModel):
     name: Optional[str]

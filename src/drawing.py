@@ -1,4 +1,4 @@
-from typing import Tuple
+from typing import Tuple, Union, Callable, Dict
 
 import matplotlib.pyplot as plt
 from matplotlib.axes import Axes
@@ -14,7 +14,7 @@ def draw(drawing: Drawing) -> Figure:
     fig, ax = _setup_plt(drawing)
 
     for shape in drawing.shapes:
-        drawers[shape.class_name](ax, shape)
+        drawers[shape.class_name](ax, shape)  # type: ignore
 
     return fig
 
