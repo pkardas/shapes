@@ -22,11 +22,11 @@ However, **preferred way is to use virtual environments**.
 
 > The main purpose of Python virtual environments is to create an isolated environment for Python projects. This means that each project can have its own dependencies, regardless of what dependencies every other project has.
 
-So for example imagine you are working on multiple projects, project A uses `numpy==1.20.3`, project B uses `numpy==0.9.6` or different version of Python.  Without virtual environment (using global Python installation) you would need to uninstall and install dependencies every time you switch between projects. With virtual environment you don't have to worry about it, because each project have its own, separate environment that can run different dependencies.
+So for example, imagine you are working on multiple projects, project A uses `numpy==1.20.3`, project B uses `numpy==0.9.6` or different version of Python.  Without virtual environment (using global Python installation) you would need to uninstall and install dependencies every time you switch between projects. With virtual environment you don't have to worry about it, because each project have its own, separate environment that can run different dependencies.
 
 Install pyenv: check documentation - https://github.com/pyenv/pyenv#homebrew-on-macos or **use this nice tutorial https://youtu.be/-5vd5GEpF-w** (there are number of tutorial for other operating systems)
 
-And then go inside `shapes` project in the terminal, and prepare virtual environment: 
+Then go inside `shapes` project in the terminal, and prepare virtual environment: 
 
 ```bash
 $ cd shapes
@@ -93,6 +93,12 @@ This will save an image in the `out` directory. Open `house.png` to see the resu
 
 ## Tasks
 
+#### Example solution
+
+I highly encourage you to solve the tasks on your own and then check the example solution.
+
+https://github.com/pkardas/shapes/tree/example-solution
+
 #### TASK 1 - Add Square
 
 It is possible to draw squares as rectangles, but it would be nice to support shorter syntax for squares. 
@@ -135,7 +141,7 @@ Test your solution using following JSON:
 
 #### TASK 3 - Get rid of explicit order
 
-Right now user have to explicitly define order or shapes:
+Right now user have to explicitly define order of shapes:
 
 ```json
 "order": [
@@ -153,7 +159,7 @@ which is slightly annoying, because you have to remember about various objects a
 
 Purpose of this task is to get rid of explicit order and allow user to define shapes as follows:
 
-```json
+```
 ...
 "shapes": [
   {
@@ -182,7 +188,7 @@ Sometimes user might not want to provide shape name, make this parameter optiona
 
 #### TASK 5 - Use external tool to check code styling and typing
 
-Our code should meet highest coding standards, for this reason we should use external tool to check if your code is formatted according to PEP8 and if we are passing correct types to functions.
+Our code should meet highest coding standards, for this reason we should use external tool to check if code is formatted according to PEP8 and if we are passing objects of correct types to functions.
 
 Add following libraries to the  `requirements-dev.txt`:
 
@@ -203,7 +209,7 @@ In order to check if code is formatted correctly run:
 $ flake8 .
 ```
 
-Flake8 will most probably complain about line length (eg. `E501 line too long (83 > 79 characters)`), 79 is too little for modern screens. We need to adjust libraries configuration. Create `setup.cfg` file with following content:
+Flake8 will most probably complain about line length (eg. `E501 line too long (83 > 79 characters)`), 79 is too little for modern screens. We need to adjust libraries configuration. Create `setup.cfg` file with the following content:
 
 ```
 [flake8]
@@ -218,7 +224,7 @@ ignore_missing_imports = True
 
 Run the command again, fix all the issues indicated by flake8 and rerun the command.
 
-In order to check if we are passing correct types around, run:
+In order to check if we are passing objects of correct types around, run:
 
 ```bash
 $ mypy .
@@ -234,7 +240,7 @@ Run `flake8`, `mypy` and check if our application still works.
 
 #### TASK 7 - Software (Shapes) as a Service
 
-Change in software is inevitable. Our management decided we are not going to ship the application to the customers and force them to use the command line script. Instead we are going to put the application on the server and for example charge users for every request to our server.
+Change in software is inevitable. Our management decided we are not going to ship the application to the customers and force them to use the command line script. Instead we are going to put the application in the cloud (on the server, for example AWS EC2).
 
 We have to prepare `shapes` application to serve requests via HTTP. We are going to use FastAPI to serve requests: https://fastapi.tiangolo.com/tutorial/first-steps/
 
@@ -284,7 +290,7 @@ $ uvicorn shapes:app --reload
 
 Open: http://127.0.0.1:8000/docs
 
-Then rework starter to accept drawing requets through POST using following example: https://fastapi.tiangolo.com/tutorial/body/
+Rework starter to accept drawing requets through POST using following example: https://fastapi.tiangolo.com/tutorial/body/
 
 In order to complete this task you will need also add following line in `drawing.py` (at the top of the file, below imports):
 
@@ -322,12 +328,10 @@ Get familiar with Docker, create `Dockerfile` that describes application environ
 
 You should be able to run the application using `docker-compose up shapes`.
 
-#### Further work
+### Further work
 
-You can develop this application in any direction you want. Think about corner cases, how to make this application more reliable, what happens if user specifies incorrect input. You can also extend this application by adding integration with the database (for example log every request and result).
+You can develop this application in any direction you want. 
 
-### Example solution
+Think about corner cases, how to make this application more reliable, what happens if user specifies incorrect input (eg. negative positions). Think about proper error handling. You can also extend this application by adding integration with the database (eg. log every request and result).
 
-I highly encourage you to solve the tasks on your own and then check the example solution.
-
-https://github.com/pkardas/shapes/tree/example-solution
+Final step would be to create a free AWS account and deploy the application. 
