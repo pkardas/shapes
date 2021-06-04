@@ -334,4 +334,4 @@ You can develop this application in any direction you want.
 
 Think about corner cases, how to make this application more reliable, what happens if user specifies incorrect input (eg. negative positions). Think about proper error handling. You can also extend this application by adding integration with the database (eg. log every request and result).
 
-Final step would be to create a free AWS account and deploy the application. 
+The final step would be to create a free AWS account and deploy the application. 
