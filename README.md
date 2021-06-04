@@ -298,11 +298,33 @@ Test you solution by entering content of `house.json` in the browser (http://127
 
 #### TASK 8 - Clean the code
 
-We are no longer supporting local JSON files. Remove `data.py`. Use flake8 and mypy to check if code meets high quality standards.
+We are no longer supporting local JSON files. Remove `data.py`. Use `flake8` and `mypy` to check if code meets high quality standards.
 
 #### TASK 9 - Write tests
 
 Our code most probably works, but we can not prove that without proper tests. Create `tests` directory and write couple of tests.  Example test can be found here: 
+
+https://github.com/pkardas/shapes/blob/2936a3f7e3e64f21966446874577960b5a2eebd8/tests/test_endpoints.py
+
+it uses test factories defined here: 
+
+https://github.com/pkardas/shapes/blob/2936a3f7e3e64f21966446874577960b5a2eebd8/tests/test_factories.py
+
+which were created using additional libraries:
+
+https://github.com/pkardas/shapes/blob/2936a3f7e3e64f21966446874577960b5a2eebd8/requirements-dev.txt
+
+Get familiar with `pytest` and test factories. Create your own tests.
+
+#### TASK 10 - Docker 
+
+Get familiar with Docker, create `Dockerfile` that describes application environment and create `docker-compose.yml` that describes services that can be run.
+
+You should be able to run the application using `docker-compose up shapes`.
+
+#### Further work
+
+You can develop this application in any direction you want. Think about corner cases, how to make this application more reliable, what happens if user specifies incorrect input. You can also extend this application by adding integration with the database (for example log every request and result).
 
 ### Example solution
 

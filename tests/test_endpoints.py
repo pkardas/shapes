@@ -8,7 +8,7 @@ from tests.test_factories import DrawingFactory
 
 # Dumping to JSON and loading to dict solves issue with Color encoding:
 _valid_request = json.loads(DrawingFactory.create().json())
-# Missing fields:
+# Request with missing fields:
 _invalid_request = {"width": 700, "height": 500}
 
 

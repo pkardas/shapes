@@ -1,0 +1,9 @@
+version: "3.1"
+
+services:
+  shapes:
+    build:
+      context: .
+    command: uvicorn shapes:app --host 0.0.0.0 --reload
+    ports:
+      - "8000:8000"
