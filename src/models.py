@@ -39,16 +39,26 @@ class Rectangle(Shape):
         return "rectangle"
 
 
+class Square(Shape):
+    point: Point
+    length: int
+
+    @property
+    def class_name(self):
+        return "square"
+
+
 class Drawing(BaseModel):
     width: int
     height: int
     background_color: Color
     circles: List[Circle]
     rectangles: List[Rectangle]
+    squares: List[Square]
     order: List[str]
 
-    def get_shape(self, name: str) -> Union[Circle, Rectangle]:
-        shape = next((shape for shape in [*self.circles, *self.rectangles] if shape.name == name), None)
+    def get_shape(self, name: str) -> Union[Circle, Rectangle, Square]:
+        shape = next((shape for shape in [*self.circles, *self.rectangles, *self.squares] if shape.name == name), None)
 
         if not shape:
             raise ShapeNotFoundError(f"'{name}' was not found")

@@ -25,16 +25,6 @@
       "color": "green"
     },
     {
-      "name": "building",
-      "point": {
-        "x": 100,
-        "y": 10
-      },
-      "width": 100,
-      "height": 100,
-      "color": "silver"
-    },
-    {
       "name": "window_0",
       "point": {
         "x": 110,
@@ -63,6 +53,17 @@
       "width": 20,
       "height": 60,
       "color": "sienna"
+    }
+  ],
+  "squares": [
+    {
+      "name": "building",
+      "point": {
+        "x": 100,
+        "y": 10
+      },
+      "length": 100,
+      "color": "silver"
     }
   ],
   "order": [

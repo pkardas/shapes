@@ -87,7 +87,14 @@ This will save an image in the `out` directory. Open `house.png` to see the resu
 
 ## Tasks
 
-#### TASK 1 - XXX
+#### TASK 1 - Add Square
+
+It is possible to draw squares as rectangles, but it would be nice to support shorter syntax for squares. 
+
+1. Add `Square` class in `models.py`. 
+2. Update `Drawing` class
+3. Add `draw_square` function in `drawing.py`
+4. Check if your solution works, add some square to `house.json` (you can define `building` as a square)
 
 #### TASK 2 - XXX
 
@@ -96,4 +103,10 @@ This will save an image in the `out` directory. Open `house.png` to see the resu
 #### TASK 4 - XXX
 
 #### TASK 5 - XXX
+
+### Example solution
+
+I highly encourage you to solve the tasks on your own and then check the example solution.
+
+https://github.com/pkardas/shapes/tree/example-solution
 
