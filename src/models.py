@@ -1,4 +1,4 @@
-from typing import List, Union
+from typing import List, Union, Optional
 
 from pydantic import BaseModel
 from pydantic.color import Color
@@ -7,7 +7,7 @@ from src.errors import ShapeNotFoundError
 
 
 class Shape(BaseModel):
-    name: str
+    name: Optional[str]
     color: Color
 
     @property

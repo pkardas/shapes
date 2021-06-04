@@ -170,7 +170,11 @@ Start by updating `Drawing` in `models.py`. Get rid of `circles`, `rectangles`, 
 
 Remove `get_shape` method from `Shape`. Update `draw` function in `drawing.py`.
 
-#### TASK 4 - XXX
+Copy example input: https://github.com/pkardas/shapes/blob/80da8a6faddfb5a80125ce6b82ce7b10e3614dc2/res/house.json and check if your solution works.
+
+#### TASK 4 - Make shape name Optional
+
+Sometimes user might not want to provide shape name, make this parameter optional. Update `Shape` in `models.py`. Check your solution, remove `name` from couple of shapes in `house.json`.
 
 #### TASK 5 - XXX
 
