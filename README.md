@@ -290,6 +290,10 @@ and get familiar with `NamedTemporaryFile` and `FileResponse`.
 
 Test you solution by entering content of `house.json` in the browser (http://127.0.0.1:8000/docs). Your endpoint should return an image.
 
+#### TASK 8 - Clean the code
+
+We are no longer supporting local JSON files. Remove `data.py`. Use flake8 and mypy to check if code meets high quality standards.
+
 ### Example solution
 
 I highly encourage you to solve the tasks on your own and then check the example solution.
