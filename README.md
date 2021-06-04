@@ -47,6 +47,12 @@ After fulfilling the steps above, just for safety, **restart the PyCharm**.
 
 - Open terminal in PyCharm and execute `pip install -r requirements-all.txt`
 
+### GitHub
+
+You can fork this repository (https://docs.github.com/en/github/getting-started-with-github/quickstart/fork-a-repo) if you would like to push your solution to GitHub.
+
+However if you are not going to publish your solution, you can just clone / download content of this repository.
+
 ## Scenario
 
 You have joined Awesome Drawings Inc. as a Software Engineer. You will be responsible for extending company's core application - `shapes` - that was started by other engineers and requires finishing. 
@@ -270,7 +276,7 @@ app = FastAPI()
 app.include_router(endpoints.router)
 ```
 
-Run server with following command:
+Run the server with following command:
 
 ```bash
 $ uvicorn shapes:app --reload
@@ -280,7 +286,7 @@ Open: http://127.0.0.1:8000/docs
 
 Then rework starter to accept drawing requets through POST using following example: https://fastapi.tiangolo.com/tutorial/body/
 
-In order to complete this task you will need also add following line in `drawing.py`:
+In order to complete this task you will need also add following line in `drawing.py` (at the top of the file, below imports):
 
 ```
 matplotlib.use("Agg")
@@ -293,6 +299,10 @@ Test you solution by entering content of `house.json` in the browser (http://127
 #### TASK 8 - Clean the code
 
 We are no longer supporting local JSON files. Remove `data.py`. Use flake8 and mypy to check if code meets high quality standards.
+
+#### TASK 9 - Write tests
+
+Our code most probably works, but we can not prove that without proper tests. Create `tests` directory and write couple of tests.  Example test can be found here: 
 
 ### Example solution
 
